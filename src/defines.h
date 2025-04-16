@@ -84,3 +84,4 @@
 #define EASY_MT "EASY_RT.emt"
 #define EASY_CFG "EASY_RT.cfg"
 //		EASY_EMU "MapXXXX.emu"
+#define EASY_INI "EasyRPG.ini"

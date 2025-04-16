@@ -118,6 +118,20 @@ bool Project::loadDatabaseAndMapTree() {
 		m_data = { *this, *db, *treemap };
 	}
 
+    // load flags, if applicable
+    auto flags = findFile(EASY_INI);
+    if (!flags.isNull()) {
+        lcf::INIReader ini(flags.toStdString());
+        setEasyRpgExtension(ini.GetString("Patch", "EasyRPG", "0") == "1");
+        if (ini.GetString("Patch", "Maniac", "0") == "1") {
+            setManiacsExtension(ManiacsMode::Full);
+        } else if (ini.GetString("Patch", "Maniac", "0") == "2") {
+            setManiacsExtension(ManiacsMode::BaseVarRange);
+        } else {
+            setManiacsExtension(ManiacsMode::Off);
+        }
+    }
+
 	return true;
 }
 
@@ -247,6 +261,22 @@ FileFinder::ProjectType Project::projectType() const {
 
 void Project::setProjectType(FileFinder::ProjectType projectType) {
 	m_projectType = projectType;
+}
+
+bool Project::easyRpgExtension() const {
+    return m_easyRpgExtension;
+}
+
+void Project::setEasyRpgExtension(bool easyRpgExtension) {
+    m_easyRpgExtension = easyRpgExtension;
+}
+
+Project::ManiacsMode Project::maniacsExtension() {
+    return m_maniacsExtension;
+}
+
+void Project::setManiacsExtension(ManiacsMode maniacsExtension) {
+    m_maniacsExtension = maniacsExtension;
 }
 
 ProjectData &Project::projectData() {

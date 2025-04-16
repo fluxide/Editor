@@ -33,6 +33,12 @@
 class Project {
 	Q_DECLARE_TR_FUNCTIONS(Project)
 public:
+    enum ManiacsMode {
+        Off = 0,
+        Full = 1,
+        BaseVarRange = 2
+    };
+
 	using ProjectList = std::vector<std::shared_ptr<Project>>;
 
 	static ProjectList enumerate(const QDir& path);
@@ -72,6 +78,12 @@ public:
 	FileFinder::ProjectType projectType() const;
 	void setProjectType(FileFinder::ProjectType projectType);
 
+    bool easyRpgExtension() const;
+    void setEasyRpgExtension(bool easyRpgExtension);
+
+    Project::ManiacsMode maniacsExtension();
+    void setManiacsExtension(Project::ManiacsMode maniacsExtension);
+
 	lcf::rpg::Database& database();
 	const lcf::rpg::Database& database() const;
 	lcf::rpg::TreeMap& treeMap();
@@ -90,4 +102,6 @@ private:
 	std::shared_ptr<QSettings> m_projectSettings;
 	QString m_gameTitle;
 	ProjectData m_data;
+    bool m_easyRpgExtension;
+    Project::ManiacsMode m_maniacsExtension;
 };
