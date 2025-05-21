@@ -45,7 +45,7 @@
    </property>
    <widget class="QMenu" name="menuGame">
     <property name="title">
-     <string>Game &amp;Project</string>
+     <string>&amp;Project</string>
     </property>
     <addaction name="actionProjectNew"/>
     <addaction name="actionProjectOpen"/>
@@ -58,7 +58,7 @@
    </widget>
    <widget class="QMenu" name="menuMaps">
     <property name="title">
-     <string>Maps</string>
+     <string>Map</string>
     </property>
     <addaction name="actionMapSave"/>
     <addaction name="actionMapRevert"/>
@@ -641,7 +641,7 @@
     <string>Undo</string>
    </property>
    <property name="toolTip">
-    <string>Undo last action</string>
+    <string>Undo action</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -680,7 +680,7 @@
     <string>Draw</string>
    </property>
    <property name="toolTip">
-    <string>Draw in the map with a pen</string>
+    <string>Draw the selected tiles</string>
    </property>
    <property name="shortcut">
     <string>2</string>
@@ -698,7 +698,7 @@
     <string>Rectangle</string>
    </property>
    <property name="toolTip">
-    <string>Draw in the map with a rectangle tool</string>
+    <string>Draw a rectangle with the selected tiles</string>
    </property>
    <property name="shortcut">
     <string>3</string>
@@ -716,7 +716,7 @@
     <string>Circle</string>
    </property>
    <property name="toolTip">
-    <string>Draw in a map with a circle tool</string>
+    <string>Draw a circle with the selected tiles</string>
    </property>
    <property name="shortcut">
     <string>4</string>
@@ -734,7 +734,7 @@
     <string>Fill</string>
    </property>
    <property name="toolTip">
-    <string>Draw in the map with a fill tool</string>
+    <string>Fill a surface with the selected tiles</string>
    </property>
    <property name="shortcut">
     <string>5</string>
@@ -777,7 +777,7 @@
     <string>New Map</string>
    </property>
    <property name="toolTip">
-    <string>Create a new map and add it as child of the current map.</string>
+    <string>Create a new map and add it as a child of the selected map</string>
    </property>
   </action>
   <action name="actionMapCopy">
@@ -789,7 +789,7 @@
     <string>Copy Map</string>
    </property>
    <property name="toolTip">
-    <string>Copy selected map.</string>
+    <string>Copy the selected map</string>
    </property>
   </action>
   <action name="actionMapPaste">
@@ -801,7 +801,7 @@
     <string>Paste Map</string>
    </property>
    <property name="toolTip">
-    <string>Paste current copied map as children of the selected map.</string>
+    <string>Paste the current copied map as a child of the selected map</string>
    </property>
   </action>
   <action name="actionMapDelete">
@@ -813,7 +813,7 @@
     <string>Delete Map</string>
    </property>
    <property name="toolTip">
-    <string>Delete selected map.</string>
+    <string>Delete the selected map</string>
    </property>
   </action>
   <action name="actionDebugEnableCaching">
