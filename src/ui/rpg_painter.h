@@ -36,7 +36,7 @@ public:
 
     void setChipset(QString chipset);
 
-    void beginPainting(QPixmap &dest);
+    void beginPainting(QPaintDevice &dest);
     void renderPanorama(const QRect &dest_rect);
     void renderTile(const short &tile_id, const QRect &dest_rect);
     void renderTileOverview(const TileOverviewMode mode);

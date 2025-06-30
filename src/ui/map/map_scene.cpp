@@ -854,7 +854,7 @@ void MapScene::updateArea(int x1, int y1, int x2, int y2, bool redraw)
 
 void MapScene::redrawArea(Core::Layer layer, int x1, int y1, int x2, int y2)
 {
-    QPixmap pix = layer == Core::LOWER ? m_lowerpix->pixmap() : m_upperpix->pixmap();
+    QImage pix = layer == Core::LOWER ? m_lowerpix->pixmap().toImage() : m_upperpix->pixmap().toImage();
     int offset_x = m_view->horizontalScrollBar()->value() / s_tileSize;
     int offset_y = m_view->verticalScrollBar()->value() / s_tileSize;
     m_painter.beginPainting(pix);
@@ -888,11 +888,11 @@ void MapScene::redrawArea(Core::Layer layer, int x1, int y1, int x2, int y2)
     m_painter.endPainting();
     if (layer == Core::LOWER)
     {
-        m_lowerpix->setPixmap(pix);
+        m_lowerpix->setPixmap(QPixmap::fromImage(pix));
     }
     else
     {
-        m_upperpix->setPixmap(pix);
+        m_upperpix->setPixmap(QPixmap::fromImage(pix));
     }
 }
 

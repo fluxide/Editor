@@ -43,7 +43,7 @@ void RpgPainter::setChipset(QString name) {
     loadChipset(name);
 }
 
-void RpgPainter::beginPainting(QPixmap &dest) {
+void RpgPainter::beginPainting(QPaintDevice &dest) {
     this->begin(&dest);
     this->setPen(Qt::yellow);
     setRenderHint(QPainter::Antialiasing, false);
