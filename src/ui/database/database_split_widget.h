@@ -148,6 +148,10 @@ inline DatabaseSplitWidget<LCF>::DatabaseSplitWidget(ProjectData& project, std::
             }
         }
     });
+
+    // Ensure that an index is selected to prevent crashes
+    ui->list->setCurrentIndex(ui->list->indexAt(QPoint(0, 0)));
+
 }
 
 template<class LCF>
