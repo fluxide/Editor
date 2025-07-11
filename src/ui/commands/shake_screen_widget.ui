@@ -47,7 +47,7 @@
          </widget>
         </item>
         <item>
-         <widget class="RpgSpinBox" name="spinTime_arg2">
+         <widget class="QSpinBox" name="spinTime_arg2">
           <property name="maximum">
            <number>1000</number>
           </property>
@@ -193,7 +193,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>RpgSpinBox</class>
+   <class>QSpinBox</class>
    <extends>QSpinBox</extends>
    <header>ui/common/rpg_spinbox.h</header>
   </customwidget>

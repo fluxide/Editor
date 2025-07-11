@@ -20,6 +20,7 @@
 #include <QFileDialog>
 #include <QSettings>
 #include "core.h"
+#include "src/defines.h"
 
 RtpPathDialog::RtpPathDialog(QWidget *parent) :
 	QDialog(parent),

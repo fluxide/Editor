@@ -18,9 +18,6 @@
 #pragma once
 
 #include <QComboBox>
-#include "src/model/project.h"
-#include "src/model/rpg_base.h"
-#include "src/common/dbstring.h"
 
 class ProjectData;
 

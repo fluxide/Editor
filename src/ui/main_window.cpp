@@ -19,8 +19,6 @@
 #include "ui/other/open_project_dialog.h"
 #include "ui/other/import_project_dialog.h"
 #include "ui/other/rtp_path_dialog.h"
-#include "ui/event/event_dialog.h"
-#include "ui/maptree/map_properties_dialog.h"
 #include "main_window.h"
 #include "ui_main_window.h"
 #include "common/dbstring.h"
@@ -45,6 +43,7 @@
 #include <lcf/rpg/mapinfo.h>
 #include <ui/picker/picker_audio_widget.h>
 #include "model/project.h"
+#include "defines.h"
 
 Q_DECLARE_METATYPE(QList<int>)
 Q_DECLARE_METATYPE(QList<float>)

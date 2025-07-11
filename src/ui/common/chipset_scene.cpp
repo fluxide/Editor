@@ -17,6 +17,7 @@
 
 #include "chipset_scene.h"
 #include "common/image_loader.h"
+#include "defines.h"
 
 #include <core.h>
 #include <qgraphicsitem.h>

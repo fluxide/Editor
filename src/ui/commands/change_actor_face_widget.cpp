@@ -22,6 +22,7 @@
 #include "ui/picker/picker_faceset_widget.h"
 
 #include <lcf/reader_util.h>
+#include "src/defines.h"
 
 ChangeActorFaceWidget::ChangeActorFaceWidget(ProjectData& project, QWidget *parent) :
 	EventCommandBaseWidget(project, parent),

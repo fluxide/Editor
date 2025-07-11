@@ -19,6 +19,7 @@
 #include "common/dbstring.h"
 #include "common/lcf_widget_binding.h"
 #include "ui_chipset_widget.h"
+#include "src/defines.h"
 
 #include <ui/common/rpg_model.h>
 

@@ -94,7 +94,7 @@ ValueOperandWidget::ValueOperandWidget(QWidget *parent) :
 	m_buttonGroup->setId(m_radioValue, 0);
 	m_buttonGroup->addButton(m_radioVar);
 	m_buttonGroup->setId(m_radioVar, 1);
-	m_spinValue = new RpgSpinBox(this);
+    m_spinValue = new QSpinBox(this);
 	m_comboVar = new VariableRpgComboBox(this);
 	gridLayout->addWidget(m_radioValue, 0, 0);
 	gridLayout->addWidget(m_spinValue, 0, 1);
@@ -142,9 +142,9 @@ TimerOperandWidget::TimerOperandWidget(QWidget *parent) :
 	m_buttonGroup->setId(m_radioValue, 0);
 	m_buttonGroup->addButton(m_radioVar);
 	m_buttonGroup->setId(m_radioVar, 1);
-	m_spinSec = new RpgSpinBox(this);
+    m_spinSec = new QSpinBox(this);
 	m_spinSec->setSuffix(" " + tr("Seconds"));
-	m_spinMin = new RpgSpinBox(this);
+    m_spinMin = new QSpinBox(this);
 	m_spinMin->setSuffix(" " + tr("Minutes"));
 	m_comboVar = new VariableRpgComboBox(this);
 	gridLayout->addWidget(m_radioValue, 0, 0);

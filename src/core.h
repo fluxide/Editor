@@ -23,8 +23,6 @@
 #define PLAYER "easyrpg-player"
 #endif
 
-#include "defines.h"
-
 #include <QPixmap>
 #include <QPainter>
 #include <QListWidget>

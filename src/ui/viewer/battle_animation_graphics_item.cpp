@@ -17,6 +17,7 @@
 
 #include "battle_animation_graphics_item.h"
 #include "common/dbstring.h"
+#include "defines.h"
 
 BattleAnimationItem::BattleAnimationItem(const QPixmap pix) :
 	QGraphicsPixmapItem(pix)

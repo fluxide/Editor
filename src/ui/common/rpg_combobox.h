@@ -23,15 +23,10 @@
 #include <QSortFilterProxyModel>
 #include <QCompleter>
 #include <QPushButton>
-#include <functional>
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include "rpg_model.h"
-#include "model/rpg_reflect.h"
-#include "edit_dialog.h"
-#include "ui/common/widget_as_dialog_wrapper.h"
 #include "ui/common/widget_as_dialog_model_wrapper.h"
-#include "ui/database/database_split_widget.h"
 
 class RpgComboBoxBase : public QWidget {
 	Q_OBJECT

@@ -16,12 +16,15 @@
  */
 
 #include "faceset_graphics_item.h"
-#include "core.h"
+#include "common/filefinder.h"
 #include "common/image_loader.h"
 #include "common/dbstring.h"
+#include "model/project.h"
 #include "model/project_data.h"
 
 #include <lcf/rpg/actor.h>
+#include "defines.h"
+#include <QPainter>
 
 FaceSetGraphicsItem::FaceSetGraphicsItem(ProjectData& project, const QPixmap pix) :
 	QGraphicsItem(), m_project(project), m_image(pix) {

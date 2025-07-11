@@ -15,11 +15,11 @@
  * along with EasyRPG Editor. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "core.h"
 #include "common/dbstring.h"
 #include "run_game_dialog.h"
 #include "ui_run_game_dialog.h"
 #include "ui/database/actor_delegate.h"
+#include "src/model/project_data.h"
 
 RunGameDialog::RunGameDialog(ProjectData& project, QWidget *parent) :
 	QDialog(parent),

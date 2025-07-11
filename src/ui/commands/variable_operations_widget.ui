@@ -97,7 +97,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="RpgSpinBox" name="op_num">
+       <widget class="QSpinBox" name="op_num">
         <property name="minimum">
          <number>1</number>
         </property>
@@ -144,7 +144,7 @@
       <item row="3" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="RpgSpinBox" name="op_ran_from">
+         <widget class="QSpinBox" name="op_ran_from">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -170,7 +170,7 @@
          </widget>
         </item>
         <item>
-         <widget class="RpgSpinBox" name="op_ran_to">
+         <widget class="QSpinBox" name="op_ran_to">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -464,11 +464,6 @@
    <class>ItemRpgComboBox</class>
    <extends>QComboBox</extends>
    <header>ui/common/rpg_combobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>RpgSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>ui/common/rpg_spinbox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -19,7 +19,6 @@
 
 #include "common/lcf_widget_binding.h"
 #include "ui/event/event_command_base_widget.h"
-#include "ui/common/rpg_spinbox.h"
 #include <QWidget>
 #include <QGridLayout>
 #include <QRadioButton>
@@ -146,7 +145,7 @@ private:
 	QButtonGroup* m_buttonGroup = nullptr;
 	QRadioButton* m_radioValue = nullptr;
 	QRadioButton* m_radioVar = nullptr;
-	RpgSpinBox* m_spinValue = nullptr;
+    QSpinBox* m_spinValue = nullptr;
 	VariableRpgComboBox* m_comboVar = nullptr;
 };
 
@@ -164,8 +163,8 @@ private:
 	QButtonGroup* m_buttonGroup = nullptr;
 	QRadioButton* m_radioValue = nullptr;
 	QRadioButton* m_radioVar = nullptr;
-	RpgSpinBox* m_spinMin = nullptr;
-	RpgSpinBox* m_spinSec = nullptr;
+    QSpinBox* m_spinMin = nullptr;
+    QSpinBox* m_spinSec = nullptr;
 	VariableRpgComboBox* m_comboVar = nullptr;
 };
 
@@ -215,8 +214,8 @@ private:
 	QRadioButton* m_radioBatch = nullptr;
 	QRadioButton* m_radioVar = nullptr;
 	RpgComboBox<LCF>* m_comboValue = nullptr;
-	RpgSpinBox* m_spinBatchMin = nullptr;
-	RpgSpinBox* m_spinBatchMax = nullptr;
+    QSpinBox* m_spinBatchMin = nullptr;
+    QSpinBox* m_spinBatchMax = nullptr;
 	VariableRpgComboBox* m_comboVar = nullptr;
 };
 
@@ -233,9 +232,9 @@ OperationOperandWidget<LCF>::OperationOperandWidget(QWidget *parent) :
 	m_radioBatch->setText(QCoreApplication::translate("OperationOperandWidget", "Range") + ":");
 	m_radioVar = new QRadioButton(this);
 	m_radioVar->setText(QCoreApplication::translate("OperationOperandWidget", "By Variable") + ":");
-	m_spinBatchMin = new RpgSpinBox(this);
+    m_spinBatchMin = new QSpinBox(this);
 	m_spinBatchMin->setPrefix(QCoreApplication::translate("OperationOperandWidget", "From") + " ");
-	m_spinBatchMax = new RpgSpinBox(this);
+    m_spinBatchMax = new QSpinBox(this);
 	m_spinBatchMax->setPrefix(QCoreApplication::translate("OperationOperandWidget", "To") + " ");
 	m_buttonGroup = new QButtonGroup(this);
 	m_buttonGroup->addButton(m_radioValue);

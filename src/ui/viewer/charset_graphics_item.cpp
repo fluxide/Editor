@@ -19,6 +19,7 @@
 #include "core.h"
 #include "common/dbstring.h"
 #include "common/image_loader.h"
+#include "defines.h"
 
 #include <lcf/rpg/actor.h>
 

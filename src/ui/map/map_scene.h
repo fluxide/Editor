@@ -33,7 +33,6 @@
 #include <qshortcut.h>
 #include <ui/rpg_painter.h>
 #include <ui/common/palette_scene.h>
-#include "common/dbstring.h"
 #include "core.h"
 
 class ProjectData;

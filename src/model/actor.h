@@ -20,7 +20,6 @@
 #include <QGraphicsItem>
 #include <lcf/rpg/database.h>
 #include <lcf/rpg/actor.h>
-#include "project.h"
 #include "rpg_base.h"
 
 class QSortFilterProxyModel;

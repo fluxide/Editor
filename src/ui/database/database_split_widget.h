@@ -27,7 +27,6 @@
 #include "ui_database_split_widget.h"
 #include "ui/common/rpg_model.h"
 #include "ui/common/widget_as_dialog_wrapper.h"
-#include "model/rpg_base.h"
 #include "model/rpg_reflect.h"
 #include "actor_widget.h"
 #include "attribute_widget.h"

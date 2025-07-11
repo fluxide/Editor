@@ -22,10 +22,7 @@
 #include <QMessageBox>
 
 #include <lcf/rpg/database.h>
-#include "core.h"
 #include "common/dbstring.h"
-#include "common/filefinder.h"
-#include "common/image_loader.h"
 #include "model/rpg_reflect.h"
 
 template<typename LCF>

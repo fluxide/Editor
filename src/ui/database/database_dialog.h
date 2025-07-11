@@ -39,8 +39,6 @@
 #include "common_event_widget.h"
 #include "switch_widget.h"
 #include "variable_widget.h"
-#include "core.h"
-#include "ui/common/rpg_model.h"
 
 template<class LCF>
 class DatabaseSplitWidget;

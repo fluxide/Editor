@@ -26,6 +26,7 @@
 #include "ui/picker/picker_dialog.h"
 #include "ui/picker/picker_charset_widget.h"
 #include "ui/picker/picker_faceset_widget.h"
+#include "src/defines.h"
 
 ActorWidget::ActorWidget(ProjectData& project, QWidget *parent) :
 	QWidget(parent),

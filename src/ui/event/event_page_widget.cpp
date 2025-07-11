@@ -24,6 +24,7 @@
 #include "common/lcf_widget_binding.h"
 #include <ui/picker/picker_charset_widget.h>
 #include <ui/picker/picker_dialog.h>
+#include "defines.h"
 
 EventPageWidget::EventPageWidget(ProjectData& project, QWidget *parent, MapScene *map) :
 	QWidget(parent),

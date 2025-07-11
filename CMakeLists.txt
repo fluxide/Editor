@@ -148,9 +148,6 @@ set(EDITOR_SOURCES
 	src/ui/commands/weather_effects_widget.cpp
 	src/ui/commands/weather_effects_widget.h
 	src/ui/commands/weather_effects_widget.ui
-	src/ui/common/edit_dialog.cpp
-	src/ui/common/edit_dialog.h
-	src/ui/common/edit_dialog.ui
 	src/ui/common/encounter_delegate.cpp
 	src/ui/common/encounter_delegate.h
 	src/ui/common/import_image_dialog.cpp
@@ -170,8 +167,6 @@ set(EDITOR_SOURCES
 	src/ui/common/rpg_audio_lineedit.h
 	src/ui/common/rpg_slider.cpp
 	src/ui/common/rpg_slider.h
-	src/ui/common/rpg_spinbox.cpp
-	src/ui/common/rpg_spinbox.h
 	src/ui/common/system_color_combobox.cpp
 	src/ui/common/system_color_combobox.h
 	src/ui/common/widget_as_dialog_model_wrapper.h

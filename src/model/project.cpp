@@ -18,7 +18,6 @@
 #include "project.h"
 #include "defines.h"
 #include "common/filefinder.h"
-#include "common/scope_guard.h"
 #include <lcf/inireader.h>
 #include <lcf/reader_util.h>
 #include <lcf/ldb/reader.h>

@@ -20,6 +20,7 @@
 #include "ui_face_graphics_widget.h"
 #include "ui/picker/picker_dialog.h"
 #include "ui/picker/picker_faceset_widget.h"
+#include "src/defines.h"
 
 FaceGraphicsWidget::FaceGraphicsWidget(ProjectData& project, QWidget *parent) :
     EventCommandBaseWidget(project, parent),
