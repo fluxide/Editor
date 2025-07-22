@@ -37,7 +37,7 @@ QString FileFinder::Find(const QDir& dir, const QString& filename, FileType type
 		case FileType::Default:
 			return fn({""});
 		case FileType::Image:
-			return fn({ ".bmp", ".png", ".xyz"});
+            return fn({".bmp", ".png", ".xyz"});
 		case FileType::Sound:
 			return fn({".opus", ".oga", ".ogg", ".wav", ".mp3"});
 		case FileType::Music:
@@ -58,8 +58,9 @@ QString FileFinder::Find(const QDir& baseDir, const QString& subDir, const QStri
 }
 
 FileFinder::ProjectType FileFinder::GetProjectType(const QDir& directory) {
+    // TODO: add explicit 2k detecion
 	if (IsRPG2kProject(directory)) {
-		return ProjectType::Legacy;
+        return ProjectType::RM2k3;
 	} else if (IsEasyRpgProject(directory)) {
 		return ProjectType::EasyRpg;
 	}

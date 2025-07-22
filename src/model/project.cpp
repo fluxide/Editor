@@ -54,6 +54,8 @@ std::shared_ptr<Project> Project::load(const QString& dir) {
 	p->setProjectType(project_type);
 	p->setProjectDir(dir);
 	p->setEncoding("utf-8");
+    //p->setRMSettings(std::make_shared<QSettings>(QSettings(RM_INI, QSettings::IniFormat)));
+    //p->setEasySettings(std::make_shared<QSettings>(QSettings(EASY_INI, QSettings::IniFormat)));
 
 	QString cfg;
 	if (project_type == FileFinder::ProjectType::EasyRpg) {
@@ -66,7 +68,7 @@ std::shared_ptr<Project> Project::load(const QString& dir) {
         lcf::INIReader ini(cfg.toStdString());
         std::string_view title = ini.GetString("RPG_RT", GAMETITLE, tr("Untitled").toStdString());
 
-		if (project_type == FileFinder::ProjectType::Legacy) {
+        if (project_type == FileFinder::ProjectType::RM2k3 || project_type == FileFinder::ProjectType::RM2k) {
 			// Check for game encoding
             std::string enc = ini.GetString("EasyRPG", "Encoding", "").data();
 			if (enc.empty()) {
@@ -94,7 +96,7 @@ std::shared_ptr<Project> Project::load(const QDir& path) {
 }
 
 bool Project::loadDatabaseAndMapTree() {
-	if (projectType() == FileFinder::ProjectType::Legacy) {
+    if (projectType() == FileFinder::ProjectType::RM2k3 || projectType() == FileFinder::ProjectType::RM2k) {
 		detectEncoding();
 		auto db = lcf::LDB_Reader::Load(findFile(RM_DB).toStdString(), encoding().toStdString());
 		if (db == nullptr) {
@@ -116,20 +118,6 @@ bool Project::loadDatabaseAndMapTree() {
 		}
 		m_data = { *this, *db, *treemap };
 	}
-
-    // load flags, if applicable
-    auto flags = findFile(EASY_INI);
-    if (!flags.isNull()) {
-        lcf::INIReader ini(flags.toStdString());
-        setEasyRpgExtension(ini.GetString("Patch", "EasyRPG", "0") == "1");
-        if (ini.GetString("Patch", "Maniac", "0") == "1") {
-            setManiacsExtension(ManiacsMode::Full);
-        } else if (ini.GetString("Patch", "Maniac", "0") == "2") {
-            setManiacsExtension(ManiacsMode::BaseVarRange);
-        } else {
-            setManiacsExtension(ManiacsMode::Off);
-        }
-    }
 
 	return true;
 }
@@ -262,20 +250,24 @@ void Project::setProjectType(FileFinder::ProjectType projectType) {
 	m_projectType = projectType;
 }
 
-bool Project::easyRpgExtension() const {
-    return m_easyRpgExtension;
+std::shared_ptr<QSettings> Project::RMSettings() const
+{
+    return m_RMSettings;
 }
 
-void Project::setEasyRpgExtension(bool easyRpgExtension) {
-    m_easyRpgExtension = easyRpgExtension;
+void Project::setRMSettings(const std::shared_ptr<QSettings> &newRMSettings)
+{
+    m_RMSettings = newRMSettings;
 }
 
-Project::ManiacsMode Project::maniacsExtension() {
-    return m_maniacsExtension;
+std::shared_ptr<QSettings> Project::EasySettings() const
+{
+    return m_EasySettings;
 }
 
-void Project::setManiacsExtension(ManiacsMode maniacsExtension) {
-    m_maniacsExtension = maniacsExtension;
+void Project::setEasySettings(const std::shared_ptr<QSettings> &newEasySettings)
+{
+    m_EasySettings = newEasySettings;
 }
 
 ProjectData &Project::projectData() {
@@ -307,7 +299,7 @@ bool Project::saveDatabase(bool inc_savecount) {
 		lcf::LDB_Reader::PrepareSave(m_data.database());
 	}
 
-	if (projectType() == FileFinder::ProjectType::Legacy) {
+    if (projectType() == FileFinder::ProjectType::RM2k3 || projectType() == FileFinder::ProjectType::RM2k) {
 		if (!lcf::LDB_Reader::Save(findFileOrDefault(RM_DB).toStdString(), m_data.database(), encoding().toStdString())) {
 			return false;
 		}
@@ -322,7 +314,7 @@ bool Project::saveDatabase(bool inc_savecount) {
 
 bool Project::saveTreeMap() {
 	auto lcf_engine = lcf::GetEngineVersion(m_data.database());
-	if (projectType() == FileFinder::ProjectType::Legacy) {
+    if (projectType() == FileFinder::ProjectType::RM2k3 || projectType() == FileFinder::ProjectType::RM2k) {
 		if (!lcf::LMT_Reader::Save(findFileOrDefault(RM_MT).toStdString(), m_data.treeMap(), lcf_engine, encoding().toStdString())) {
 			return false;
 		}

@@ -39,6 +39,11 @@ public:
         BaseVarRange = 2
     };
 
+    enum BattleStyle {
+        RM2k = 0,
+        RM2k3 = 1
+    };
+
 	using ProjectList = std::vector<std::shared_ptr<Project>>;
 
 	static ProjectList enumerate(const QDir& path);
@@ -78,12 +83,6 @@ public:
 	FileFinder::ProjectType projectType() const;
 	void setProjectType(FileFinder::ProjectType projectType);
 
-    bool easyRpgExtension() const;
-    void setEasyRpgExtension(bool easyRpgExtension);
-
-    Project::ManiacsMode maniacsExtension();
-    void setManiacsExtension(Project::ManiacsMode maniacsExtension);
-
 	lcf::rpg::Database& database();
 	const lcf::rpg::Database& database() const;
 	lcf::rpg::TreeMap& treeMap();
@@ -95,13 +94,18 @@ public:
 	bool saveDatabase(bool incSavecount = true);
 	bool saveTreeMap();
 
+    std::shared_ptr<QSettings> RMSettings() const;
+    void setRMSettings(const std::shared_ptr<QSettings> &newRMSettings);
+
+    std::shared_ptr<QSettings> EasySettings() const;
+    void setEasySettings(const std::shared_ptr<QSettings> &newEasySettings);
+
 private:
 	FileFinder::ProjectType m_projectType;
 	QString m_encoding;
 	QDir m_projectDir;
-	std::shared_ptr<QSettings> m_projectSettings;
+    std::shared_ptr<QSettings> m_RMSettings;
+    std::shared_ptr<QSettings> m_EasySettings;
 	QString m_gameTitle;
 	ProjectData m_data;
-    bool m_easyRpgExtension;
-    Project::ManiacsMode m_maniacsExtension;
 };

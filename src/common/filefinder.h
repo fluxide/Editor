@@ -31,10 +31,12 @@ namespace FileFinder {
 
 	enum class ProjectType {
 		None,
-		/** EasyRPG project */
+        // EasyRPG project (deprecated).
 		EasyRpg,
-		/** Legacy (RPG Maker 2k/2k3) project */
-		Legacy
+        // RPG Maker 2000 project. Equivalent to the latest Steam version.
+        RM2k,
+        // RPG Maker 2003 project. Equivalent to the latest Steam version.
+        RM2k3
 	};
 
 	QString Find(const QDir& directory, const QString& filename, FileType type = FileType::Default, QDir::Filter filter = QDir::Files);

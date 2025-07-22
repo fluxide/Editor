@@ -16,7 +16,6 @@
  */
 
 #include "ui/main_window.h"
-#include "ui/event/event_page_widget.h"
 #include <QApplication>
 #include <QSplashScreen>
 #include <QTranslator>
